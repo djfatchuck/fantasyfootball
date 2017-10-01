@@ -33,9 +33,14 @@ class App extends Component {
       loggedin: false,
       overlay: false,
       streams: [
-        {title: "New Orleans vs. Miami", videoid: "http://buffstream.com/embed/nfl-live.php"},
+        {title: "LA Rams vs. Dallas", videoid: "http://buffstream.com/embed/nfl-live.php"},
         {title: "Carolina vs. New England", videoid: "http://buffstream.com/embed/nfl-2.php"},
         {title: "Detroit vs. Minnesota", videoid: "http://buffstream.com/embed/nfl-6.php"},
+        {title: "Buffalo vs. Atlanta", videoid: "http://buffstream.com/embed/nfl-7.php"},
+        {title: "Tennesse vs. Houston", videoid: "http://buffstream.com/embed/nfl-4.php"},
+        {title: "Jacksonville vs. NY Jets", videoid: "http://buffstream.com/embed/nfl-8.php"},
+        {title: "Cincinnati vs. Cleveland", videoid: "http://buffstream.com/embed/nfl-5.php"},
+
       ]
     }
   }
