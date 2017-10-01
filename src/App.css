@@ -34,3 +34,17 @@
         transform: rotate(360deg);
     }
 }
+
+.player {
+    width: 640px;
+    display: inline-block;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    color: white;
+    z-index: 1000;
+}

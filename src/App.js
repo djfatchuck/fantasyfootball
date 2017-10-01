@@ -31,10 +31,15 @@ class App extends Component {
     super(props)
     this.state = {
       loggedin: false,
+      overlay: false,
       streams: [
-        ('test-stream', '2g811Eo7K8U'),
-        ('fat chuck falls hard', '8_vOL18I-U8')]
+        {title: "New Orleans vs. Miami", videoid: "tWXi6u7pv2I"},
+      ]
     }
+  }
+
+  _onReady(event) {
+    event.target.mute();
   }
 
   signIn(username, password) {
@@ -47,30 +52,35 @@ class App extends Component {
 
   players(){
     const opts = {
+      height: '390',
+      width: '640',
       playerVars: { // https://developers.google.com/youtube/player_parameters
-        autoplay: 1
+        autoplay: 1,
+        wmode: 'opaque',
       }
     };
     let players = [];
     this.state.streams.forEach((stream) => {
       players.push(
-        <div className="player" key={stream[0]}>
+        <div className="player" key={stream.title}>
+          <p>{stream.title}</p>
           <YouTube
-            videoId={stream[1]}
+            videoId={stream.videoid}
             opts={opts}
             onReady={this._onReady}
           />
         </div>
       )
-    })
+    });
     return players;
   }
 
 
   render() {
-
     return (
       <div className="App">
+        {(this.state.overlay) ?
+        <div className="overlay">Fantasy Ticker (coming soon)</div> : null}
         <header className="App-header">
           <img src={jah} className="App-logo" alt="logo"/>
           <h1 className="App-title">Werb Werb's Bullshit</h1>
@@ -78,7 +88,7 @@ class App extends Component {
         {(this.state.loggedin) ?
           <div className="main-body">
             <p className="App-intro">
-            Fantasy ticker
+              Fantasy Ticker (coming soon)
             </p>
             {this.players()}
           </div>:
