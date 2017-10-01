@@ -33,7 +33,7 @@ class App extends Component {
       loggedin: false,
       overlay: false,
       streams: [
-        {title: "New Orleans vs. Miami", videoid: "tWXi6u7pv2I"},
+        {title: "New Orleans vs. Miami", videoid: "http://buffstream.com/embed/nfl-live.php"},
       ]
     }
   }
@@ -64,11 +64,8 @@ class App extends Component {
       players.push(
         <div className="player" key={stream.title}>
           <p>{stream.title}</p>
-          <YouTube
-            videoId={stream.videoid}
-            opts={opts}
-            onReady={this._onReady}
-          />
+          <iframe src={stream.videoid} name="frame" scrolling="no" frameBorder="no" align="center" height = "450px" width = "800px">
+          </iframe>
         </div>
       )
     });
