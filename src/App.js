@@ -34,6 +34,8 @@ class App extends Component {
       overlay: false,
       streams: [
         {title: "New Orleans vs. Miami", videoid: "http://buffstream.com/embed/nfl-live.php"},
+        {title: "Carolina vs. New England", videoid: "http://buffstream.com/embed/nfl-2.php"},
+        {title: "Detroit vs. Minnesota", videoid: "http://buffstream.com/embed/nfl-6.php"},
       ]
     }
   }
@@ -64,7 +66,7 @@ class App extends Component {
       players.push(
         <div className="player" key={stream.title}>
           <p>{stream.title}</p>
-          <iframe src={stream.videoid} name="frame" scrolling="no" frameBorder="no" align="center" height = "450px" width = "800px">
+          <iframe src={stream.videoid} name="frame" scrolling="no" frameBorder="no" height = "450px" width = "800px">
           </iframe>
         </div>
       )
