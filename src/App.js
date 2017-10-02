@@ -33,10 +33,7 @@ class App extends Component {
       loggedin: false,
       overlay: false,
       streams: [
-        {title: "Philadelphia vs. LA Chargers", videoid: "http://buffstream.com/embed/nfl-3.php"},
-        {title: "NY Giants vs. Tampa Bay", videoid: "http://buffstream.com/embed/nfl-7.php"},
-        {title: "San Francisco vs. Arizona", videoid: "http://buffstream.com/embed/nfl-5.php"},
-        {title: "Oakland vs. Denver", videoid: "http://buffstream.com/embed/nfl-4.php"},
+
 
 
       ]
