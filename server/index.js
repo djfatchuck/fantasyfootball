@@ -1,9 +1,10 @@
 const express = require('express');
 const path = require('path');
-var pg = require('pg');
+const pg = require('pg');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const pool = new pg.Pool();
 
 // Priority serve any static files.
 app.use(express.static(path.resolve(__dirname, '../client/build')));
@@ -15,7 +16,7 @@ app.get('/api', function (req, res) {
 });
 
 app.get('/db', function (request, response) {
-  pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+  pool.connect(process.env.DATABASE_URL, function(err, client, done) {
     client.query('SELECT * FROM test_table', function(err, result) {
       done();
       if (err)
