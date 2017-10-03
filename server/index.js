@@ -16,6 +16,7 @@ app.get('/api', function (req, res) {
 });
 
 app.get('/db', function (request, response) {
+  console.log(process.env.DATABASE_URL);
   pool.connect(process.env.DATABASE_URL, function(err, client, done) {
     client.query('SELECT * FROM test_table', function(err, result) {
       done();
