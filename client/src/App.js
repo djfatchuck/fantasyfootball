@@ -81,8 +81,7 @@ class App extends Component {
         {(this.state.overlay) ?
         <div className="overlay">Fantasy Ticker (coming soon)</div> : null}
         <header className="App-header">
-          <img src={jah} className="App-logo" alt="logo"/>
-          <h1 className="App-title">Werb Werb's Bullshit</h1>
+          <h1 className="App-title">Fat Chuck's Fantasy Football</h1>
         </header>
         {(this.state.loggedin) ?
           <div className="main-body">
