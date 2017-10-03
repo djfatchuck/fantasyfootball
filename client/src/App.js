@@ -1,14 +1,12 @@
 import React, {Component} from 'react';
-import YouTube from 'react-youtube';
-import jah from './jah.jpg';
 import './App.css';
 
 class LoginForm extends Component {
 
   handleLogin(e) {
-    e.preventDefault()
-    let username = this.refs.username.value
-    let password = this.refs.password.value
+    e.preventDefault();
+    let username = this.refs.username.value;
+    let password = this.refs.password.value;
     this.props.onSignIn(username, password)
   }
 
@@ -28,7 +26,7 @@ class LoginForm extends Component {
 class App extends Component {
 
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       loggedin: false,
       overlay: false,
@@ -40,10 +38,6 @@ class App extends Component {
     }
   }
 
-  _onReady(event) {
-    event.target.mute();
-  }
-
   signIn(username, password) {
     if (username === "djfatchuck" && password === "djfatchuck") {
       this.setState({
@@ -53,14 +47,6 @@ class App extends Component {
   }
 
   players(){
-    const opts = {
-      height: '390',
-      width: '640',
-      playerVars: { // https://developers.google.com/youtube/player_parameters
-        autoplay: 1,
-        wmode: 'opaque',
-      }
-    };
     let players = [];
     this.state.streams.forEach((stream) => {
       players.push(
@@ -77,15 +63,15 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="main-app">
         {(this.state.overlay) ?
         <div className="overlay">Fantasy Ticker (coming soon)</div> : null}
-        <header className="App-header">
-          <h1 className="App-title">Fat Chuck's Fantasy Football</h1>
+        <header className="main-header">
+          <h1 className="main-title">Fat Chuck's Fantasy Football</h1>
         </header>
         {(this.state.loggedin) ?
           <div className="main-body">
-            <p className="App-intro">
+            <p>
               Fantasy Ticker (coming soon)
             </p>
             {this.players()}

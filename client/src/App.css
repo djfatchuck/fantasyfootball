@@ -1,8 +1,10 @@
-.App {
+.main-app {
     text-align: center;
+    color: black;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
-.App-header {
+.main-header {
     background-image: url(./banner.jpg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -12,17 +14,14 @@
     border-bottom-width: thick;
 }
 
-.App-title {
+.main-title {
     font-size: 1.5em;
     display: inline-block;
     float: left;
     margin-left: 40px;
     width: 300px;
-}
-
-.App-intro {
-    font-size: large;
-}
+    color: black;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;}
 
 
 .player {
