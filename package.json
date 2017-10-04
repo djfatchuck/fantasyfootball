@@ -14,8 +14,9 @@
     "client/node_modules"
   ],
   "dependencies": {
-    "pg": "7.x",
-    "express": "^4.14.1"
+    "express": "^4.14.1",
+    "pg": "6.x",
+    "yahoo-fantasy": "^2.0.4"
   },
   "devDependencies": {}
 }
